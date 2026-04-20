@@ -7,19 +7,19 @@ import { TranslateText } from "@/components/translation/TranslateText";
 const slides = [
   {
     id: 1,
-    image: "/lovable-uploads/06199176-075c-4ff5-9af4-6888ffeffc16.png",
+    image: "/uploads/06199176-075c-4ff5-9af4-6888ffeffc16.png",
     title: "튀니지를 발견하세요",
     subtitle: "역사와 문화의 땅"
   },
   {
     id: 2,
-    image: "/lovable-uploads/b1054a66-c723-4e47-b4d5-345f2c611881.png",
+    image: "/uploads/b1054a66-c723-4e47-b4d5-345f2c611881.png",
     title: "고대의 경이로움",
     subtitle: "튀니지의 역사적 장소를 탐험하세요"
   },
   {
     id: 3,
-    image: "/lovable-uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png",
+    image: "/uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png",
     title: "사막 모험",
     subtitle: "사하라를 경험하세요"
   }

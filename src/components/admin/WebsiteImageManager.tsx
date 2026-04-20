@@ -17,11 +17,11 @@ interface ImageItem {
   isDeleting: boolean;
 }
 
-// Specifically target Lovable uploads patterns
-const LOVABLE_UPLOAD_PATTERNS = [
-  '/lovable-uploads/',
-  'https://lovable-uploads.',
-  '.lovableproject.com/'
+// Specifically target system uploads patterns
+const IMAGE_UPLOAD_PATTERNS = [
+  '/uploads/',
+  'https://uploads.',
+  '.project-assets.io/'
 ];
 
 // Function to extract images from HTML
@@ -34,8 +34,8 @@ const extractImagesFromHtml = (html: string): string[] => {
   // Extract from img tags
   while ((match = imgRegex.exec(html)) !== null) {
     const url = match[1];
-    // Specifically look for Lovable uploads
-    if (LOVABLE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) && 
+    // Specifically look for system uploads
+    if (IMAGE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) && 
         !url.endsWith('.svg') &&
         !url.startsWith('data:image/svg')) {
       results.push(url);
@@ -45,7 +45,7 @@ const extractImagesFromHtml = (html: string): string[] => {
   // Extract from CSS background URLs
   while ((match = cssRegex.exec(html)) !== null) {
     const url = match[1];
-    if (LOVABLE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) && 
+    if (IMAGE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) && 
         !url.endsWith('.svg') &&
         !url.startsWith('data:image/svg')) {
       results.push(url);
@@ -64,7 +64,7 @@ const WebsiteImageManager: React.FC = () => {
   const [imageToDelete, setImageToDelete] = useState<string | null>(null);
   const [isMigrating, setIsMigrating] = useState(false);
   const [migrationProgress, setMigrationProgress] = useState(0);
-  const [lovableImages, setLovableImages] = useState<string[]>([]);
+  const [systemImages, setsystemImages] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   
   const { 
@@ -188,14 +188,14 @@ const WebsiteImageManager: React.FC = () => {
     }
   };
   
-  // Scan the site specifically for Lovable uploads
-  const scanWebsiteForLovableUploads = async () => {
+  // Scan the site specifically for system uploads
+  const scanWebsiteForSystemUploads = async () => {
     try {
       setIsMigrating(true);
       setMigrationProgress(0);
       toast({
         title: "Scanning website",
-        description: "Looking for Lovable upload images across the website...",
+        description: "Looking for system upload images across the website...",
       });
       
       // Get HTML content from key pages to extract images
@@ -213,9 +213,9 @@ const WebsiteImageManager: React.FC = () => {
       // Scan current page first
       const currentPageHtml = document.documentElement.outerHTML;
       
-      // Specifically look for Lovable uploads
-      const lovableUploadsFromCurrentPage = extractImagesFromHtml(currentPageHtml);
-      foundImages.push(...lovableUploadsFromCurrentPage);
+      // Specifically look for system uploads
+      const systemUploadsFromPage = extractImagesFromHtml(currentPageHtml);
+      foundImages.push(...systemUploadsFromPage);
       
       // Scan other main pages
       let scannedPages = 1;
@@ -257,28 +257,28 @@ const WebsiteImageManager: React.FC = () => {
         return window.location.origin + '/' + src;
       }).filter(Boolean) as string[];
       
-      // Filter out non-Lovable uploads
-      const filteredLovableImages = processedImages.filter(url => {
+      // Filter out non-system uploads
+      const filteredsystemImages = processedImages.filter(url => {
         if (!url) return false;
         
-        // Only include Lovable uploads
-        return LOVABLE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) &&
+        // Only include system uploads
+        return IMAGE_UPLOAD_PATTERNS.some(pattern => url.includes(pattern)) &&
                !url.endsWith('.svg');
       });
       
       // Remove duplicates
-      const uniqueImages = [...new Set(filteredLovableImages)];
-      setLovableImages(uniqueImages);
+      const uniqueImages = [...new Set(filteredsystemImages)];
+      setsystemImages(uniqueImages);
       
       toast({
         title: "Scan complete",
-        description: `Found ${uniqueImages.length} unique Lovable upload images`,
+        description: `Found ${uniqueImages.length} unique system upload images`,
       });
     } catch (error) {
       console.error("Error scanning website for images:", error);
       toast({
         title: "Scan failed",
-        description: "Failed to scan website for Lovable upload images",
+        description: "Failed to scan website for system upload images",
         variant: "destructive"
       });
     } finally {
@@ -287,12 +287,12 @@ const WebsiteImageManager: React.FC = () => {
     }
   };
   
-  // Migrate found Lovable uploads to Supabase
-  const handleMigrateLovableImages = async () => {
-    if (lovableImages.length === 0) {
+  // Migrate found system uploads to Supabase
+  const handleMigratesystemImages = async () => {
+    if (systemImages.length === 0) {
       toast({
         title: "No images to migrate",
-        description: "Please scan the website for Lovable upload images first",
+        description: "Please scan the website for system upload images first",
       });
       return;
     }
@@ -303,11 +303,11 @@ const WebsiteImageManager: React.FC = () => {
     try {
       toast({
         title: "Starting migration",
-        description: `Migrating ${lovableImages.length} Lovable images to Supabase...`,
+        description: `Migrating ${systemImages.length} system images to Supabase...`,
       });
       
       // Start migration and track progress
-      const results = await migrateImages(lovableImages, selectedFolder);
+      const results = await migrateImages(systemImages, selectedFolder);
       
       // Update progress periodically
       const progressInterval = setInterval(() => {
@@ -410,7 +410,7 @@ const WebsiteImageManager: React.FC = () => {
       <Tabs defaultValue="stored" className="space-y-4">
         <TabsList>
           <TabsTrigger value="stored">Stored Images</TabsTrigger>
-          <TabsTrigger value="migrate">Lovable Migration</TabsTrigger>
+          <TabsTrigger value="migrate">Asset Migration</TabsTrigger>
         </TabsList>
         
         <TabsContent value="stored" className="space-y-4">
@@ -479,14 +479,14 @@ const WebsiteImageManager: React.FC = () => {
         <TabsContent value="migrate" className="space-y-4">
           <Alert>
             <AlertDescription>
-              This tool helps you scan your website for images from Lovable uploads and migrate them to Supabase storage.
+              This tool helps you scan your website for images from system uploads and migrate them to Supabase storage.
               All images will be compressed to max 400KB and converted to WebP format for better performance.
             </AlertDescription>
           </Alert>
           
           <div className="flex flex-wrap gap-2">
             <Button
-              onClick={scanWebsiteForLovableUploads}
+              onClick={scanWebsiteForSystemUploads}
               disabled={isMigrating}
               variant="outline"
             >
@@ -495,12 +495,12 @@ const WebsiteImageManager: React.FC = () => {
               ) : (
                 <RefreshCw className="mr-2 h-4 w-4" />
               )}
-              Scan for Lovable Uploads
+              Scan for system uploads
             </Button>
             
             <Button
-              onClick={handleMigrateLovableImages}
-              disabled={isMigrating || lovableImages.length === 0}
+              onClick={handleMigratesystemImages}
+              disabled={isMigrating || systemImages.length === 0}
               className="bg-admin-primary hover:bg-admin-accent"
             >
               {isMigrating ? (
@@ -511,7 +511,7 @@ const WebsiteImageManager: React.FC = () => {
               ) : (
                 <>
                   <UploadCloud className="mr-2 h-4 w-4" />
-                  Migrate {lovableImages.length} Images
+                  Migrate {systemImages.length} Images
                 </>
               )}
             </Button>
@@ -529,12 +529,12 @@ const WebsiteImageManager: React.FC = () => {
             </div>
           )}
           
-          {lovableImages.length > 0 && (
+          {systemImages.length > 0 && (
             <div className="mt-4">
-              <h3 className="font-semibold mb-2">Found Lovable Uploads ({lovableImages.length})</h3>
+              <h3 className="font-semibold mb-2">Found system uploads ({systemImages.length})</h3>
               <div className="max-h-60 overflow-y-auto border rounded-md p-2">
                 <ul className="space-y-1 text-xs">
-                  {lovableImages.map((url, idx) => (
+                  {systemImages.map((url, idx) => (
                     <li key={idx} className="truncate text-blue-600 hover:underline">
                       <a href={url} target="_blank" rel="noreferrer">{url}</a>
                     </li>

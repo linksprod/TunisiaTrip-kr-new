@@ -7,19 +7,19 @@ import { useTranslation } from "@/hooks/use-translation";
 const slides = [
   {
     id: 1,
-    image: "/lovable-uploads/f66ee597-e8d7-44b5-834e-d0eb1266a0ba.png",
+    image: "/uploads/f66ee597-e8d7-44b5-834e-d0eb1266a0ba.png",
     title: "튀니지 여행",
     subtitle: "잊을 수 없는 경험이 기다립니다"
   },
   {
     id: 2,
-    image: "/lovable-uploads/2714f2c3-4465-4a55-8369-5484aa8f3b28.png",
+    image: "/uploads/2714f2c3-4465-4a55-8369-5484aa8f3b28.png",
     title: "숨겨진 보석 발견",
     subtitle: "진정한 문화 체험"
   },
   {
     id: 3,
-    image: "/lovable-uploads/a2d95c89-23fc-48b3-b72b-742bdd9b0076.png",
+    image: "/uploads/a2d95c89-23fc-48b3-b72b-742bdd9b0076.png",
     title: "사막 모험",
     subtitle: "사하라를 통한 여행"
   }

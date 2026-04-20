@@ -17,8 +17,8 @@ export const initializeCriticalOptimizations = () => {
 export const optimizeLCPImage = () => {
   // Create high-priority preload for hero and social media images
   const criticalImages = [
-    "/lovable-uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png", // Hero image
-    "/lovable-uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png"  // Social media OG image
+    "/uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png", // Hero image
+    "/uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png"  // Social media OG image
   ];
   
   criticalImages.forEach(imageUrl => {

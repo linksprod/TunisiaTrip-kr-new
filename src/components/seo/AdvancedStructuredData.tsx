@@ -18,8 +18,8 @@ export function AdvancedStructuredData() {
       ? "한국인을 위한 튀니지 여행 전문 서비스. 사막투어, 문화체험, 맞춤형 여행 패키지 제공"
       : "Specialized Tunisia travel services for Korean travelers. Desert tours, cultural experiences, and customized travel packages",
     "url": window.location.origin,
-    "logo": `${window.location.origin}/lovable-uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png`,
-    "image": `${window.location.origin}/lovable-uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png`,
+    "logo": `${window.location.origin}/uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png`,
+    "image": `${window.location.origin}/uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png`,
     "telephone": "+216-XX-XXX-XXX",
     "address": {
       "@type": "PostalAddress",

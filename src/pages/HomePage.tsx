@@ -36,7 +36,7 @@ export const HomePage: React.FC = () => {
   
   // Dynamic image selection based on language
   const getOGImage = () => {
-    return "/lovable-uploads/72002146-2908-4d85-aabb-31ce43c71062.png"; // Updated social media image
+    return "/uploads/72002146-2908-4d85-aabb-31ce43c71062.png"; // Updated social media image
   };
 
   // 한국인을 위한 상세한 튀니지 여행 정보 FAQ
@@ -116,7 +116,7 @@ export const HomePage: React.FC = () => {
         estimatedCost="1500"
         currency="USD"
         steps={howToSteps}
-        image="https://tunisiatrip.kr/lovable-uploads/72002146-2908-4d85-aabb-31ce43c71062.png"
+        image="https://tunisiatrip.kr/uploads/72002146-2908-4d85-aabb-31ce43c71062.png"
       />
       
       {/* Local Business Schema for Atlantis Travel */}

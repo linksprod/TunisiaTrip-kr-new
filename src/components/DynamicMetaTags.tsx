@@ -27,7 +27,7 @@ export function DynamicMetaTags({ title, description, image, type }: DynamicMeta
     }
     
     // Use the default social media graph image with absolute URL
-    return "https://tunisiatrip.kr/lovable-uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png";
+    return "https://tunisiatrip.kr/uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png";
   };
 
   // Get current URL for canonical and hreflang

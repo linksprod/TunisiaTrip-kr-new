@@ -19,7 +19,7 @@ export function MobileNavbar() {
         <div className="flex items-center justify-between px-4 py-3 h-16">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/a652eb0a-374b-4bb7-9cc1-497b38510262.png"
+              src="/uploads/a652eb0a-374b-4bb7-9cc1-497b38510262.png"
               alt="Tunisia Trip Logo"
               className="h-9 w-auto"
             />

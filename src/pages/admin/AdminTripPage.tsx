@@ -555,7 +555,7 @@ const AdminTripPage = () => {
                       description,
                       rating,
                       tags: ['New', 'Activity'],
-                      image: '/lovable-uploads/5d0e792c-e35e-43a4-ae97-71f48ca58d1d.png'
+                      image: '/uploads/5d0e792c-e35e-43a4-ae97-71f48ca58d1d.png'
                     });
                   }}>
                     Add Activity
@@ -594,7 +594,7 @@ const AdminTripPage = () => {
                       name,
                       location,
                       rating,
-                      image: '/lovable-uploads/31fa750b-9618-4556-9aa2-c9b62cf3b480.png'
+                      image: '/uploads/31fa750b-9618-4556-9aa2-c9b62cf3b480.png'
                     });
                   }}>
                     Add {currentTab === "hotels" ? "Hotel" : "Guest House"}

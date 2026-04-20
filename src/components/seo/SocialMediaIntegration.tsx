@@ -23,7 +23,7 @@ export function SocialShareWidget({ title, description, url, image }: SocialShar
     : 'Tunisia travel guide and tour information for Koreans');
   const shareImage = image?.startsWith('http') 
     ? image 
-    : `${window.location.origin}${image || '/lovable-uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png'}`;
+    : `${window.location.origin}${image || '/uploads/61a2c6de-ab60-42e6-ac0a-d47a00bb14f2.png'}`;
 
   const handleFacebookShare = () => {
     const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareTitle)}`;

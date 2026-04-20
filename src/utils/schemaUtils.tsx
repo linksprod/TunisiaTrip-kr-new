@@ -102,7 +102,7 @@ export const BlogPostSchema = ({
       name: 'Tunisia Tourism',
       logo: {
         '@type': 'ImageObject',
-        url: '/lovable-uploads/b8d3011d-f5cd-4edd-b34e-9ef0827ba186.png'
+        url: '/uploads/b8d3011d-f5cd-4edd-b34e-9ef0827ba186.png'
       }
     },
     url,

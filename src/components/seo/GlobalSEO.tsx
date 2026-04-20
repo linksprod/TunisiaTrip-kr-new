@@ -70,7 +70,7 @@ export function GlobalSEO() {
           "url": "https://tunisiatrip.kr",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://tunisiatrip.kr/lovable-uploads/72002146-2908-4d85-aabb-31ce43c71062.png",
+            "url": "https://tunisiatrip.kr/uploads/72002146-2908-4d85-aabb-31ce43c71062.png",
             "width": 1200,
             "height": 630
           },

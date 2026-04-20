@@ -10,8 +10,8 @@ const STATIC_ASSETS = [
   '/index.html',
   '/src/main.tsx',
   '/src/index.css',
-  '/lovable-uploads/93c21f45-85e6-4c0d-9726-d7648d48686d.png', // favicon
-  '/lovable-uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png', // hero image
+  '/uploads/93c21f45-85e6-4c0d-9726-d7648d48686d.png', // favicon
+  '/uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png', // hero image
 ];
 
 // Install event - cache static assets

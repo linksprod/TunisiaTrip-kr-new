@@ -31,7 +31,7 @@ export function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <img 
-                src="/lovable-uploads/a652eb0a-374b-4bb7-9cc1-497b38510262.png"
+                src="/uploads/a652eb0a-374b-4bb7-9cc1-497b38510262.png"
                 alt="Tunisia Trip Logo"
                 className="h-8 w-auto"
               />

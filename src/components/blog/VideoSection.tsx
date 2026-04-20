@@ -22,7 +22,7 @@ const videos: VideoCard[] = [
     id: "tunisia-discover-v2", // Unique ID to force refresh
     title: "튀니지를 발견하세요",
     subtitle: "튀니지의 아름다움과 마법 탐험하기",
-    image: "/lovable-uploads/f490eb11-b7d5-4bb1-86c7-33f38275a59b.png",
+    image: "/uploads/f490eb11-b7d5-4bb1-86c7-33f38275a59b.png",
     videoUrl: "https://youtu.be/dC9Z91qOLLk",
     comingSoon: false
   },
@@ -30,14 +30,14 @@ const videos: VideoCard[] = [
     id: "tunis-vlog",
     title: "튀니스 브이로그",
     subtitle: "튀니스 메디나에서의 브이로그",
-    image: "/lovable-uploads/7004eb7b-0db7-4919-a8fd-c6eb54f3e157.png",
+    image: "/uploads/7004eb7b-0db7-4919-a8fd-c6eb54f3e157.png",
     comingSoon: true
   },
   {
     id: "discover-tozeur",
     title: "토주르 발견",
     subtitle: "토주르를 탐험하세요",
-    image: "/lovable-uploads/2a55f591-b880-443b-bfe4-1f5662503a3d.png",
+    image: "/uploads/2a55f591-b880-443b-bfe4-1f5662503a3d.png",
     videoUrl: "https://www.youtube.com/watch?v=InHloF4XTOE",
     comingSoon: false
   }

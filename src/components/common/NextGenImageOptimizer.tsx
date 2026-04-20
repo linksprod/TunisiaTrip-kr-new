@@ -30,8 +30,8 @@ export const NextGenImage: React.FC<NextGenImageProps> = ({
     const basePath = originalSrc.substring(0, lastDotIndex);
     const extension = originalSrc.substring(lastDotIndex);
 
-    // For Lovable uploads, we'll create optimized versions
-    if (originalSrc.includes('/lovable-uploads/')) {
+    // For system uploads, we'll create optimized versions
+    if (originalSrc.includes('/uploads/')) {
       return {
         avif: `${basePath}.avif`,
         webp: `${basePath}.webp`,
