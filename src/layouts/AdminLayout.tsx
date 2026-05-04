@@ -24,6 +24,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     { icon: <MapPin size={18} />, label: "Trips", href: "/admin/trip", active: location.pathname === "/admin/trip" },
     { icon: <MessageSquare size={18} />, label: "Contacts", href: "/admin/contacts", active: location.pathname === "/admin/contacts" },
     { icon: <Search size={18} />, label: "SEO", href: "/admin/seo", active: location.pathname === "/admin/seo" },
+    { icon: <User size={18} />, label: "Admins", href: "/admin/users", active: location.pathname === "/admin/users" },
   ];
   
   const userInitials = user?.email 
@@ -33,57 +34,62 @@ export function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-[#F9FAFC]">
       <ErrorBoundary>
-        <Navbar />
-        
-        <div className="flex flex-1 pt-16">
+        <div className="flex flex-1">
           {/* Admin Sidebar with SidebarProvider */}
           <SidebarProvider defaultExpanded={true}>
-            <Sidebar className="w-64 border-r border-gray-200 bg-white py-8 hidden md:block">
-              <div className="px-6 mb-8">
-                <h2 className="text-lg font-semibold text-[#1F1F20] flex items-center gap-2">
-                  <BarChart2 size={20} className="text-[#347EFF]" />
-                  Admin Panel
-                </h2>
-              </div>
-              
-              <div className="px-6 mb-6">
-                <div className="flex items-center space-x-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-admin-primary text-white">
-                      {userInitials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="overflow-hidden">
-                    <p className="text-sm font-medium truncate">{user?.email}</p>
-                    <p className="text-xs text-gray-500">Admin</p>
+            <Sidebar className="w-64 border-r border-gray-200 bg-white py-8 hidden md:block h-screen sticky top-0">
+              <div className="flex flex-col h-full">
+                <div className="flex-1">
+                  <div className="px-6 mb-8">
+                    <h2 className="text-lg font-semibold text-[#1F1F20] flex items-center gap-2">
+                      <BarChart2 size={20} className="text-[#347EFF]" />
+                      Admin Panel
+                    </h2>
                   </div>
+                  
+                  <div className="px-6 mb-6">
+                    <div className="flex items-center space-x-3">
+                      <Avatar className="h-9 w-9">
+                        <AvatarFallback className="bg-admin-primary text-white">
+                          {userInitials}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="overflow-hidden">
+                        <p className="text-sm font-medium truncate">{user?.email}</p>
+                        <p className="text-xs text-gray-500">Admin</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <nav className="space-y-1 px-3">
+                    {navItems.map((item, idx) => (
+                      <Link
+                        to={item.href}
+                        key={idx}
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
+                          item.active ? 'bg-admin-primary/10 text-admin-primary' : 'text-gray-600 hover:bg-gray-100'
+                        }`}
+                      >
+                        <span className={`${item.active ? 'text-admin-primary' : 'text-gray-400'}`}>
+                          {item.icon}
+                        </span>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </nav>
                 </div>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={signOut}
-                  className="mt-2 w-full justify-start text-gray-600 hover:text-gray-900"
-                >
-                  <LogOut size={16} className="mr-2" /> Sign out
-                </Button>
-              </div>
-              
-              <nav className="space-y-1 px-3">
-                {navItems.map((item, idx) => (
-                  <Link
-                    to={item.href}
-                    key={idx}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors ${
-                      item.active ? 'bg-admin-primary/10 text-admin-primary' : 'text-gray-600 hover:bg-gray-100'
-                    }`}
+
+                <div className="px-6 mt-auto">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={signOut}
+                    className="w-full justify-start text-gray-600 hover:text-gray-900 hover:bg-red-50 hover:text-red-600 transition-colors"
                   >
-                    <span className={`${item.active ? 'text-admin-primary' : 'text-gray-400'}`}>
-                      {item.icon}
-                    </span>
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
+                    <LogOut size={16} className="mr-2" /> Sign out
+                  </Button>
+                </div>
+              </div>
             </Sidebar>
           </SidebarProvider>
           
@@ -94,8 +100,6 @@ export function AdminLayout({ children }: AdminLayoutProps) {
             </ErrorBoundary>
           </div>
         </div>
-        
-        <TunisiaFooter />
       </ErrorBoundary>
     </div>
   );

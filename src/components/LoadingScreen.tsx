@@ -12,11 +12,8 @@ export const LoadingScreen = () => {
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
 
   useEffect(() => {
-    // Reset loading state on route change
-    setShow(true);
-    setAnimationState('visible');
-    
-    const minDisplayTime = 1200; // Minimum time to show the loading screen
+    // Only handle loading on initial mount
+    const minDisplayTime = 800; // Reduced minimum time for better UX
     const startTime = Date.now();
     
     const handleLoad = () => {
@@ -38,26 +35,10 @@ export const LoadingScreen = () => {
       window.addEventListener('load', handleLoad);
     }
 
-    // Hide translation initialization messages that might appear during loading
-    const originalConsoleInfo = console.info;
-    console.info = function(...args) {
-      // Skip logging translation service initialization messages
-      const message = args.join(' ');
-      if (message.includes('Translation') || 
-          message.includes('translat') || 
-          message.includes('Loading saved language preference')) {
-        // Suppress these messages during loading
-        return;
-      }
-      originalConsoleInfo.apply(console, args);
-    };
-    
     return () => {
       window.removeEventListener('load', handleLoad);
-      // Restore original console.info
-      console.info = originalConsoleInfo;
     };
-  }, [location.pathname]); // Reset loading state on route change
+  }, []); // Empty dependency array means this only runs once on app mount
 
   if (!show) return null;
 

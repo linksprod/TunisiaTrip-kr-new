@@ -25,11 +25,15 @@ const formSchema = z.object({
   details: z.string()
 });
 
+import { useContacts } from "@/hooks/use-contacts";
+
 export function ContactForm() {
   const { toast } = useToast();
   const { currentLanguage } = useTranslation();
+  const { submitContact } = useContacts();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -69,7 +73,7 @@ export function ContactForm() {
     };
   }, [form]);
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     if (data.email !== data.confirmEmail) {
       toast({
         variant: "destructive",
@@ -78,11 +82,32 @@ export function ContactForm() {
       });
       return;
     }
-    toast({
-      title: "Form submitted",
-      description: "We'll get back to you soon!"
-    });
-    form.reset();
+
+    setIsSubmitting(true);
+    try {
+      // Prepare the message by combining additional fields
+      const formattedMessage = `
+Address: ${data.address}
+Zip Code: ${data.zipCode}
+Phone: ${data.phone}
+Details: ${data.details}
+      `.trim();
+
+      const result = await submitContact({
+        name: data.name,
+        email: data.email,
+        subject: `[${data.typeOfRequest}] Inquiry from Atlantis Form`,
+        message: formattedMessage
+      });
+
+      if (result.success) {
+        form.reset();
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -200,9 +225,19 @@ export function ContactForm() {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-2">
-                  <Button type="submit" className="w-full md:w-[270px] h-10 bg-[#347EFF] hover:bg-[#2461d5] rounded-lg text-base font-normal">
-                    <TranslateText text="Submit Form" language={currentLanguage} />
-                    <Send className="ml-2 h-5 w-5" />
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full md:w-[270px] h-10 bg-[#347EFF] hover:bg-[#2461d5] rounded-lg text-base font-normal"
+                  >
+                    {isSubmitting ? (
+                      <TranslateText text="Submitting..." language={currentLanguage} />
+                    ) : (
+                      <>
+                        <TranslateText text="Submit Form" language={currentLanguage} />
+                        <Send className="ml-2 h-5 w-5" />
+                      </>
+                    )}
                   </Button>
                 </div>
               </form>

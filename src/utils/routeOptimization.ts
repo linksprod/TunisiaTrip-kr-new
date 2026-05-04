@@ -14,6 +14,7 @@ export const LazyAdminTripPage = lazy(() => import('../pages/admin/AdminTripPage
 export const LazyAdminContactsPage = lazy(() => import('../pages/admin/AdminContactsPage'));
 export const LazyAdminSEOPage = lazy(() => import('../pages/admin/AdminSEOPage'));
 export const LazyAdminMediaPage = lazy(() => import('../pages/admin/AdminMediaPage'));
+export const LazyAdminManagementPage = lazy(() => import('../pages/admin/AdminManagementPage'));
 
 // Preload critical routes that are likely to be visited
 export const preloadCriticalRoutes = () => {
@@ -45,7 +46,8 @@ export const convertToSeoFriendlyUrl = (url: string): string => {
     '/admin/trip': '/admin/trip-management', 
     '/admin/contacts': '/admin/contact-management',
     '/admin/seo': '/admin/seo-management',
-    '/admin/media': '/admin/media-management'
+    '/admin/media': '/admin/media-management',
+    '/admin/users': '/admin/user-management'
   };
   
   return urlMappings[normalizedUrl] || normalizedUrl;

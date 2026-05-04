@@ -22,6 +22,7 @@ import {
   LazyAdminContactsPage,
   LazyAdminSEOPage,
   LazyAdminMediaPage,
+  LazyAdminManagementPage,
   optimizeRouteTransition
 } from "./utils/routeOptimization";
 
@@ -129,6 +130,11 @@ function App() {
                         <LazyAdminMediaPage />
                       </AdminProtectedRoute>
                     } />
+                    <Route path="/admin/user-management" element={
+                      <AdminProtectedRoute>
+                        <LazyAdminManagementPage />
+                      </AdminProtectedRoute>
+                    } />
                     
                     {/* Legacy admin redirects */}
                     <Route path="/admin/blog" element={
@@ -154,6 +160,11 @@ function App() {
                     <Route path="/admin/media" element={
                       <AdminProtectedRoute>
                         <LazyAdminMediaPage />
+                      </AdminProtectedRoute>
+                    } />
+                    <Route path="/admin/users" element={
+                      <AdminProtectedRoute>
+                        <LazyAdminManagementPage />
                       </AdminProtectedRoute>
                     } />
                     

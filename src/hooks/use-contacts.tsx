@@ -75,16 +75,37 @@ export const useContacts = () => {
     message: string;
   }) => {
     try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: contactData
-      });
+      // 1. Save to database first so it appears in Admin
+      const { error: dbError } = await supabase
+        .from("contacts")
+        .insert([{
+          ...contactData,
+          status: 'new'
+        }]);
 
-      if (error) throw error;
+      if (dbError) {
+        console.error("Database error:", dbError);
+        throw dbError;
+      }
+
+      // 2. Call Edge Function to send email notification
+      try {
+        const { error: emailError } = await supabase.functions.invoke("send-contact-email", {
+          body: contactData
+        });
+        if (emailError) console.warn("Email function warning:", emailError);
+      } catch (emailErr) {
+        // We log but don't fail the whole operation if just email fails
+        console.warn("Failed to send email notification:", emailErr);
+      }
 
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. We'll get back to you soon."
       });
+
+      // Refetch contacts if we're in admin or interested in the update
+      fetchContacts();
 
       return { success: true };
     } catch (err) {
