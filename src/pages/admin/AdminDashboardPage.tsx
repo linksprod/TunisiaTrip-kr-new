@@ -4,9 +4,10 @@ import { AdminLayout } from "@/layouts/AdminLayout";
 import { AdminHeader } from "@/components/admin/AdminHeader";
 import { ReadingTimeChart } from "@/components/admin/charts/ReadingTimeChart";
 import { PerformanceChart } from "@/components/admin/charts/PerformanceChart";
-import { ResourceUsageChart } from "@/components/admin/charts/ResourceUsageChart";
+import { WebsiteStatisticsChart } from "@/components/admin/charts/WebsiteStatisticsChart";
 import { DashboardMetricsCards } from "@/components/admin/charts/DashboardMetricsCards";
 import { useBlogAnalytics } from "@/hooks/use-blog-analytics";
+import { useDashboardStats } from "@/hooks/use-dashboard-stats";
 import { usePerformanceMetrics } from "@/hooks/use-performance-metrics";
 import { useDeviceSize } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -14,6 +15,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const AdminDashboardPage = () => {
   const { analytics, isLoading: loadingAnalytics, error: analyticsError } = useBlogAnalytics();
+  const websiteStats = useDashboardStats();
   const performanceMetrics = usePerformanceMetrics();
   const { isMobile } = useDeviceSize();
   const { toast } = useToast();
@@ -29,7 +31,7 @@ const AdminDashboardPage = () => {
   }, [analyticsError, toast]);
 
   // Show loading state when data isn't ready
-  if (loadingAnalytics) {
+  if (loadingAnalytics || websiteStats.isLoading) {
     return (
       <AdminLayout>
         <div className="space-y-6 md:space-y-8">
@@ -90,8 +92,8 @@ const AdminDashboardPage = () => {
 
         {/* Bottom Section - Single Chart */}
         <div className="grid grid-cols-1">
-          {/* Resource Usage Section */}
-          <ResourceUsageChart metrics={performanceMetrics} />
+          {/* Website Statistics Section (formerly Resource Usage) */}
+          <WebsiteStatisticsChart stats={websiteStats} />
         </div>
       </div>
     </AdminLayout>

@@ -211,8 +211,6 @@ export function Navbar() {
                   <Sparkles className="h-5 w-5" />
                   {currentLanguage === "KR" ? "여행 시작하기" : "Start My Trip"}
                 </Link>
-
-                <LanguageSelector />
               </div>
             </div>
           </div>

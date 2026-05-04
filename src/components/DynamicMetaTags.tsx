@@ -120,15 +120,12 @@ export function DynamicMetaTags({ title, description, image, type }: DynamicMeta
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* Hreflang Tags */}
-      <link rel="alternate" hrefLang="ko" href={`https://tunisiatrip.kr${typeof window !== 'undefined' ? window.location.pathname : ''}?lang=ko`} />
-      <link rel="alternate" hrefLang="en" href={`https://tunisiatrip.kr${typeof window !== 'undefined' ? window.location.pathname : ''}?lang=en`} />
+      {/* Hreflang Tags - Hardcoded to KR as per user request */}
+      <link rel="alternate" hrefLang="ko" href={`https://tunisiatrip.kr${typeof window !== 'undefined' ? window.location.pathname : ''}`} />
       <link rel="alternate" hrefLang="x-default" href={`https://tunisiatrip.kr${typeof window !== 'undefined' ? window.location.pathname : ''}`} />
       
       {/* Enhanced Korean Keywords */}
-      {currentLanguage === 'KR' && (
-        <meta name="keywords" content={koreanKeywords} />
-      )}
+      <meta name="keywords" content={koreanKeywords} />
       
       {/* Robots and SEO directives */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -145,7 +142,7 @@ export function DynamicMetaTags({ title, description, image, type }: DynamicMeta
       <meta property="og:image:alt" content={metaContent.title} />
       <meta property="og:type" content={type || "website"} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:locale" content={currentLanguage === 'KR' ? 'ko_KR' : 'en_US'} />
+      <meta property="og:locale" content="ko_KR" />
       <meta property="og:site_name" content="TunisiaTrip" />
       
       {/* Twitter / X */}
@@ -162,7 +159,7 @@ export function DynamicMetaTags({ title, description, image, type }: DynamicMeta
       <meta name="ICBM" content="33.8869, 9.5375" />
       
       {/* Language and Content */}
-      <meta httpEquiv="content-language" content={currentLanguage === 'KR' ? 'ko' : 'en'} />
+      <meta httpEquiv="content-language" content="ko" />
     </Helmet>
   );
 }

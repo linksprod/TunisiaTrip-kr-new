@@ -15,7 +15,7 @@ export function GlobalSEO() {
   return (
     <Helmet>
       {/* Global SEO improvements */}
-      <html lang={currentLanguage === 'KR' ? 'ko' : 'en'} />
+      <html lang="ko" />
       
       {/* Enhanced mobile meta tags */}
       <meta name="format-detection" content="telephone=no" />
@@ -38,7 +38,7 @@ export function GlobalSEO() {
       <meta name="ICBM" content="37.5665, 126.9780" />
       
       {/* Content language and charset */}
-      <meta httpEquiv="content-language" content={currentLanguage === 'KR' ? 'ko' : 'en'} />
+      <meta httpEquiv="content-language" content="ko" />
       
       {/* Security headers */}
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
@@ -54,9 +54,8 @@ export function GlobalSEO() {
       {/* Sitemap and robots */}
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       
-      {/* Alternate language versions */}
-      <link rel="alternate" hrefLang="ko" href={`https://tunisiatrip.kr${location.pathname}?lang=ko`} />
-      <link rel="alternate" hrefLang="en" href={`https://tunisiatrip.kr${location.pathname}?lang=en`} />
+      {/* Alternate language versions - Hardcoded to KR as per user request */}
+      <link rel="alternate" hrefLang="ko" href={`https://tunisiatrip.kr${location.pathname}`} />
       <link rel="alternate" hrefLang="x-default" href={`https://tunisiatrip.kr${location.pathname}`} />
       
       {/* Organization structured data */}
@@ -123,10 +122,7 @@ export function GlobalSEO() {
           "publisher": {
             "@id": "https://tunisiatrip.kr/#organization"
           },
-          "inLanguage": [
-            currentLanguage === 'KR' ? 'ko' : 'en',
-            currentLanguage === 'KR' ? 'en' : 'ko'
-          ],
+          "inLanguage": ["ko"]
           "potentialAction": {
             "@type": "SearchAction",
             "target": {

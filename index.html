@@ -54,9 +54,8 @@
   <!-- Canonical link to prevent redirect issues -->
   <link rel="canonical" href="https://tunisiatrip.kr/" />
 
-  <!-- Alternate language versions -->
-  <link rel="alternate" hreflang="ko-KR" href="https://tunisiatrip.kr/?lang=KR" />
-  <link rel="alternate" hreflang="en" href="https://tunisiatrip.kr/?lang=EN" />
+  <!-- Alternate language versions - Single version (KO) as multilingual is disabled -->
+  <link rel="alternate" hreflang="ko-KR" href="https://tunisiatrip.kr/" />
   <link rel="alternate" hreflang="x-default" href="https://tunisiatrip.kr/" />
 
   <!-- Korean SEO Structured Data -->
@@ -219,37 +218,6 @@
         var img = new Image();
         img.src = "https://i.imgur.com/5YtDgG9.gif";
       }, 2000);
-    });
-
-    // Dynamic OG image based on language
-    function updateOGImage() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const langParam = urlParams.get('lang');
-      const savedLang = localStorage.getItem('preferredLanguage');
-      const currentLang = langParam || savedLang || 'KR';
-
-      // Image URLs for different languages
-      const ogImages = {
-        'KR': 'https://tunisiatrip.kr/og-image.png',
-        'EN': 'https://tunisiatrip.kr/og-image.png'
-      };
-
-      const imageUrl = ogImages[currentLang] || ogImages['KR'];
-
-      // Update OG image meta tags
-      const ogImage = document.querySelector('meta[property="og:image"]');
-      const twitterImage = document.querySelector('meta[property="twitter:image"]');
-
-      if (ogImage) ogImage.setAttribute('content', imageUrl);
-      if (twitterImage) twitterImage.setAttribute('content', imageUrl);
-    }
-
-    // Update OG image on page load and language change
-    document.addEventListener('DOMContentLoaded', updateOGImage);
-    window.addEventListener('storage', function (e) {
-      if (e.key === 'preferredLanguage') {
-        updateOGImage();
-      }
     });
   </script>
 

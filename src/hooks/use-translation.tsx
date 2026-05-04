@@ -102,30 +102,8 @@ const getUrlLanguage = (): LanguageCode | null => {
   }
 };
 
-// Detect preferred language with safety checks
+// Detect preferred language - Hardcoded to KR as per user request to disable multilingual
 const detectInitialLanguage = (): LanguageCode => {
-  // Priority 1: URL parameters
-  const urlLang = getUrlLanguage();
-  if (urlLang) {
-    console.log(`Translation hook: Using language from URL parameter: ${urlLang}`);
-    return urlLang;
-  }
-  
-  // Priority 2: localStorage
-  const savedLang = getStoredLanguage();
-  if (savedLang) {
-    console.log(`Translation hook: Using saved language preference: ${savedLang}`);
-    return savedLang;
-  }
-  
-  // Priority 3: Korean domain
-  if (isKoreanDomain()) {
-    console.log('Translation hook: Detected Korean domain, using KR');
-    return 'KR';
-  }
-  
-  // Priority 4: Default to Korean
-  console.log('Translation hook: No language preference found, using default KR');
   return 'KR';
 };
 

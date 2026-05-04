@@ -26,7 +26,6 @@ export function MobileNavbar() {
           </Link>
           
           <div className="flex items-center gap-2">
-            <LanguageSelector />
             <Button
               variant="ghost"
               size="icon"
