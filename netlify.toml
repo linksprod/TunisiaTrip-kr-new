@@ -2,6 +2,22 @@
   publish = "dist"
   command = "npm run build"
 
+[[plugins]]
+  package = "netlify-plugin-prerender-spa"
+  [plugins.inputs]
+    # Prerender critical routes for SEO
+    renderAfterTime = 5000
+    routes = [
+      "/",
+      "/about-tunisia",
+      "/travel-information",
+      "/blog",
+      "/company-information",
+      "/start-my-trip",
+      "/food",
+      "/hotels"
+    ]
+
 [[edge_functions]]
   function = "og-handler"
   path = "/*"

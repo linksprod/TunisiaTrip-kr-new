@@ -18,7 +18,17 @@ import { travelInfoTranslations } from '../translations/korean/travelInfo';
 import { tipsSectionTranslations } from '../translations/korean/tipsSection';
 import { aboutPageTranslations } from '../translations/korean/aboutPage';
 import { travelCitiesTranslations } from '../translations/korean/travel-cities';
+import { travelGeneralTranslations } from '../translations/korean/travel-general';
+import { travelFaqTranslations } from '../translations/korean/travel-faq';
 import { startMyTripTranslations } from '../translations/korean/start-my-trip';
+import { departureTranslations } from '../translations/korean/departure';
+import { transportationTranslations } from '../translations/korean/transportation';
+import { koreanMarketTranslations } from '../translations/korean/korean-market';
+import { footerTranslations } from '../translations/korean/footer';
+import { slideshowTranslations } from '../translations/korean/slideshows';
+import { atlantisDetailedTranslations } from '../translations/korean/atlantis-detailed';
+import { tipsBeforeTripTranslations } from '../translations/korean/tips-before-trip';
+import { accommodationsTranslations } from '../translations/korean/accommodations';
 import { englishTranslations } from '../translations/english';
 
 type LanguageCode = 'EN' | 'KR';
@@ -44,7 +54,17 @@ const allTranslations = {
   ...tipsSectionTranslations,
   ...aboutPageTranslations,
   ...travelCitiesTranslations,
-  ...startMyTripTranslations
+  ...travelGeneralTranslations,
+  ...travelFaqTranslations,
+  ...startMyTripTranslations,
+  ...departureTranslations,
+  ...transportationTranslations,
+  ...koreanMarketTranslations,
+  ...footerTranslations,
+  ...slideshowTranslations,
+  ...atlantisDetailedTranslations,
+  ...tipsBeforeTripTranslations,
+  ...accommodationsTranslations
 };
 
 // Detect if we're on .kr domain with safety checks
@@ -110,8 +130,8 @@ const detectInitialLanguage = (): LanguageCode => {
 };
 
 export const useTranslation = () => {
-  // Initialize with safe default, will be updated in useLayoutEffect
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('KR');
+  // Initialize with safe default from detection to avoid flash
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>(detectInitialLanguage());
   const [isInitialized, setIsInitialized] = useState(false);
   
   // Safely get translation context with fallback

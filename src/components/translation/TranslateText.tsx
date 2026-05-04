@@ -76,10 +76,29 @@ export const TranslateText: React.FC<TranslateTextProps> = ({
 }) => {
   const { translate } = useTranslationProvider();
   const { currentLanguage, updateKey } = useTranslation();
-  const [translatedText, setTranslatedText] = useState<string>(text);
   
   // Use the current language if none is provided
   const targetLanguage = language || currentLanguage;
+  
+  // Helper to get synchronous translation
+  const getSyncTranslation = () => {
+    if (!text?.trim()) return text;
+    if (!targetLanguage || targetLanguage === 'EN') return text;
+    
+    // Check precompiled translations
+    if (targetLanguage === 'KR' && text in allKoreanTranslations) {
+      return allKoreanTranslations[text as keyof typeof allKoreanTranslations];
+    }
+    
+    // Check localStorage cache
+    const cacheKey = `${text}_${targetLanguage}`;
+    const cachedTranslation = typeof window !== 'undefined' ? localStorage.getItem(cacheKey) : null;
+    if (cachedTranslation) return cachedTranslation;
+    
+    return text;
+  };
+
+  const [translatedText, setTranslatedText] = useState<string>(getSyncTranslation());
   
   // Create a memoized translation function to avoid unnecessary re-translations
   const updateTranslation = useCallback(async () => {
