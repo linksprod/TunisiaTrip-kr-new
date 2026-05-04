@@ -1,20 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from '@/hooks/use-translation';
 import { useLocation } from 'react-router-dom';
 
 export function GlobalSEO() {
-  const { currentLanguage } = useTranslation();
   const location = useLocation();
-
-  // Safety check for current language
-  if (!currentLanguage) {
-    return null;
-  }
 
   return (
     <Helmet>
-      {/* Global SEO improvements */}
+      {/* Global SEO improvements - Hardcoded to Korean as per user request */}
       <html lang="ko" />
       
       {/* Enhanced mobile meta tags */}
@@ -54,7 +47,7 @@ export function GlobalSEO() {
       {/* Sitemap and robots */}
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       
-      {/* Alternate language versions - Hardcoded to KR as per user request */}
+      {/* Alternate language versions - Single version (KO) */}
       <link rel="alternate" hrefLang="ko" href={`https://tunisiatrip.kr${location.pathname}`} />
       <link rel="alternate" hrefLang="x-default" href={`https://tunisiatrip.kr${location.pathname}`} />
       
@@ -65,7 +58,7 @@ export function GlobalSEO() {
           "@type": "Organization",
           "@id": "https://tunisiatrip.kr/#organization",
           "name": "TunisiaTrip",
-          "alternateName": currentLanguage === 'KR' ? "튀니지 트립" : "Tunisia Trip",
+          "alternateName": "튀니지 트립",
           "url": "https://tunisiatrip.kr",
           "logo": {
             "@type": "ImageObject",
@@ -73,19 +66,17 @@ export function GlobalSEO() {
             "width": 1200,
             "height": 630
           },
-          "description": currentLanguage === 'KR' 
-            ? "튀니지 여행정보, 액티비티, 날씨정보를 제공하는 전문 여행 가이드"
-            : "Professional travel guide providing Tunisia travel information, activities, and weather updates",
+          "description": "튀니지 여행정보, 액티비티, 날씨정보를 제공하는 전문 여행 가이드",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "TN",
-            "addressLocality": currentLanguage === 'KR' ? "튀니스" : "Tunis"
+            "addressLocality": "튀니스"
           },
           "areaServed": {
             "@type": "Country",
             "name": "Tunisia"
           },
-          "knowsAbout": currentLanguage === 'KR' ? [
+          "knowsAbout": [
             "튀니지 여행",
             "사하라 사막 투어", 
             "튀니지 관광명소",
@@ -93,14 +84,6 @@ export function GlobalSEO() {
             "지중해 여행",
             "카르타고 유적",
             "시디 부 사이드"
-          ] : [
-            "Tunisia Travel",
-            "Sahara Desert Tours",
-            "Tunisia Tourism",
-            "North Africa Travel", 
-            "Mediterranean Travel",
-            "Carthage Ruins",
-            "Sidi Bou Said"
           ],
           "sameAs": [
             "https://tunisiatrip.kr"
@@ -116,13 +99,11 @@ export function GlobalSEO() {
           "@id": "https://tunisiatrip.kr/#website",
           "url": "https://tunisiatrip.kr",
           "name": "TunisiaTrip",
-          "description": currentLanguage === 'KR'
-            ? "튀니지 여행정보, 액티비티, 날씨정보를 한눈에! 사하라 사막부터 지중해 해변까지 완벽한 튀니지 여행 가이드"
-            : "Complete Tunisia travel guide with travel information, activities, and weather updates from Sahara Desert to Mediterranean beaches",
+          "description": "튀니지 여행정보, 액티비티, 날씨정보를 한눈에! 사하라 사막부터 지중해 해변까지 완벽한 튀니지 여행 가이드",
           "publisher": {
             "@id": "https://tunisiatrip.kr/#organization"
           },
-          "inLanguage": ["ko"]
+          "inLanguage": ["ko"],
           "potentialAction": {
             "@type": "SearchAction",
             "target": {
