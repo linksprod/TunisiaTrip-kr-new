@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 # Media and Uploads (Externalize these to Supabase Storage / CDN)
-public/uploads/
 public/videos/
 public/assets/
 
