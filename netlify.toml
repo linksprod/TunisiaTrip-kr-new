@@ -2,10 +2,6 @@
   publish = "dist"
   command = "npm run build"
 
-[[plugins]]
-  package = "netlify-plugin-prerender-spa"
-  [plugins.inputs]
-    source = "dist"
 
 [[edge_functions]]
   function = "og-handler"
