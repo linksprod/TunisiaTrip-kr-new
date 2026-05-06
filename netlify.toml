@@ -2,7 +2,6 @@
   publish = "dist"
   command = "npm run build"
 
-
 [[edge_functions]]
   function = "og-handler"
   path = "/*"
@@ -66,13 +65,6 @@
   to = "/admin/media-management"
   status = 301
 
-# URL structure optimization - redirect underscored URLs to hyphenated ones
-[[redirects]]
-  from = "/*_*"
-  to = "/:splat"
-  status = 301
-  force = false
-  conditions = {Query = {}}
 
 # Main SPA redirect (must be last)
 [[redirects]]
