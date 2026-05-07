@@ -35,5 +35,67 @@ export const travelItineraryTranslations = {
   "View highlights": "하이라이트 보기",
   "Hide highlights": "하이라이트 숨기기",
   "Full day experience": "하루 종일 체험",
-  "1-day experience": "1일 체험"
+  "1-day experience": "1일 체험",
+
+  // Day 1
+  "Transfer from Tunis-Carthage International Airport": "튀니스 카르타고 국제공항에서 픽업 및 이동",
+  "Hotel check-in and welcome briefing": "호텔 체크인 및 오리엔테이션",
+  "Evening walk in La Marsa beach": "라 마르사 해변 저녁 산책",
+  "Welcome dinner at a traditional restaurant": "전통 식당에서의 환영 저녁 식사",
+  "La Marsa is one of Tunis' most upscale suburbs, known for its beautiful beach and seaside promenade.": "라 마르사는 튀니스에서 가장 고급스러운 교외 지역 중 하나로, 아름다운 해변과 해안 산책로로 유명합니다.",
+
+  // Day 2
+  "Visit to Carthage archaeological site": "카르타고 고고학 유적지 방문",
+  "Tour of Antonine Baths": "안토니누스 목욕탕 투어",
+  "Explore Byrsa Hill": "비르사 언덕 탐험",
+  "Afternoon in Sidi Bou Said": "시디 부 사이드에서의 오후",
+  "Sunset at Café des Délices": "카페 데 델리스에서 즐기는 일몰",
+  "Carthage was the center of the ancient Carthaginian civilization and is now a UNESCO World Heritage site.": "카르타고는 고대 카르타고 문명의 중심지였으며 현재 유네스코 세계문화유산으로 지정되어 있습니다.",
+
+  // Day 3
+  "Explore the Medina of Tunis": "튀니스 메디나 탐험",
+  "Visit Ez-Zitouna Mosque": "자이투나 모스크 방문",
+  "Traditional souks tour": "전통 수크(시장) 투어",
+  "Bardo Museum visit": "바르도 박물관 방문",
+  "Traditional hammam experience": "전통 하맘(목욕) 체험",
+  "The Medina of Tunis is a UNESCO World Heritage site featuring over 700 monuments.": "튀니스 메디나는 700개 이상의 기념물이 있는 유네스코 세계문화유산입니다.",
+
+  // Day 4
+  "Great Mosque of Kairouan": "카이로안 대모스크",
+  "Medina of Kairouan exploration": "카이로안 메디나 탐험",
+  "Visit to carpet workshops": "카펫 워크숍 방문",
+  "El Jem Amphitheatre tour": "엘 젬 원형극장 투어",
+  "El Jem Museum visit": "엘 젬 박물관 방문",
+  "Kairouan is famous for its religious monuments while El Jem amphitheater is one of the best-preserved Roman ruins in the world.": "카이로안은 종교적 기념물로 유명하며, 엘 젬 원형극장은 세계에서 가장 잘 보존된 로마 유적 중 하나입니다.",
+
+  // Day 5
+  "Explore Sfax's well-preserved medina": "스팍스의 잘 보존된 메디나 탐험",
+  "Traditional seafood lunch": "전통 해산물 점심 식사",
+  "Drive to Matmata": "마트마타로 이동",
+  "Visit troglodyte dwellings": "혈거인 주거지 방문",
+  "Star Wars filming locations tour": "스타워즈 촬영지 투어",
+  "Matmata's cave homes provided filming locations for Star Wars' planet Tatooine.": "마트마타의 동굴 집은 스타워즈의 타투인 행성 촬영지로 사용되었습니다.",
+
+  // Day 6
+  "Ferry to Djerba Island": "제르바 섬행 페리 탑승",
+  "Explore El Ghriba Synagogue": "엘 그리바 시나고그 탐험",
+  "Djerba Heritage Museum": "제르바 민속 박물관",
+  "Drive to Tataouine": "타타우인으로 이동",
+  "Berber village exploration": "베르베르 마을 탐험",
+  "Tataouine's desert landscapes inspired the name of Luke Skywalker's home planet in Star Wars.": "타타우인의 사막 풍경은 스타워즈 루크 스카이워커의 고향 행성 이름에 영감을 주었습니다.",
+
+  // Day 7
+  "Visit Ksar Ouled Debbab fortress": "크사르 올레드 데밥 요새 방문",
+  "Desert picnic lunch": "사막 피크닉 점심 식사",
+  "Ksar Ghilane oasis and hot springs": "크사르 길란 오아시스와 온천",
+  "Camel trek in the sand dunes": "사구에서 즐기는 낙타 트레킹",
+  "Overnight desert camping": "사막 야영 체험",
+  "Ksar Ghilane is a beautiful oasis at the edge of the Grand Erg Oriental, featuring natural hot springs surrounded by sand dunes.": "크사르 길란은 그랜드 에르그 오리엔탈 가장자리에 위치한 아름다운 오아시스로, 사구로 둘러싸인 천연 온천이 특징입니다.",
+
+  // Day 8
+  "Morning visit to Douz market": "두즈 시장 아침 방문",
+  "Desert Museum exploration": "사막 박물관 탐험",
+  "Transfer to Djerba or Tunis airport": "제르바 또는 튀니스 공항으로 이동",
+  "Departure assistance": "출발 지원",
+  "Douz is famous for its annual International Festival of the Sahara celebrating desert culture.": "두즈는 사막 문화를 기념하는 연례 사하라 국제 축제로 유명합니다."
 };

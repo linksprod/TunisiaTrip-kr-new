@@ -4,119 +4,119 @@ import { DayItinerary, FAQItem } from "./types";
 export const dayByDayItinerary: DayItinerary[] = [
   {
     day: 1,
-    title: "Arrival in Tunis",
+    title: "튀니스 도착",
     activities: [
-      "Transfer from Tunis-Carthage International Airport",
-      "Hotel check-in and welcome briefing",
-      "Evening walk in La Marsa beach",
-      "Welcome dinner at a traditional restaurant"
+      "튀니스 카르타고 국제공항에서 픽업 및 이동",
+      "호텔 체크인 및 오리엔테이션",
+      "라 마르사 해변 저녁 산책",
+      "전통 식당에서의 환영 저녁 식사"
     ],
-    description: "Begin your journey in the vibrant capital city of Tunisia. After settling in, enjoy the Mediterranean atmosphere with a seaside stroll.",
-    additionalInfo: "La Marsa is one of Tunis' most upscale suburbs, known for its beautiful beach and seaside promenade.",
+    description: "튀니지의 활기찬 수도에서 여행을 시작하세요. 체크인 후 해변 산책으로 지중해 분위기를 즐겨보세요.",
+    additionalInfo: "라 마르사는 튀니스에서 가장 고급스러운 교외 지역 중 하나로, 아름다운 해변과 해안 산책로로 유명합니다.",
     image: "/uploads/f66ee597-e8d7-44b5-834e-d0eb1266a0ba.png",
     color: "blue"
   },
   {
     day: 2,
-    title: "Carthage & Sidi Bou Said",
+    title: "카르타고 & 시디 부 사이드",
     activities: [
-      "Visit to Carthage archaeological site",
-      "Tour of Antonine Baths",
-      "Explore Byrsa Hill",
-      "Afternoon in Sidi Bou Said",
-      "Sunset at Café des Délices"
+      "카르타고 고고학 유적지 방문",
+      "안토니누스 목욕탕 투어",
+      "비르사 언덕 탐험",
+      "시디 부 사이드에서의 오후",
+      "카페 데 델리스에서 즐기는 일몰"
     ],
-    description: "Discover the ancient ruins of Carthage and the picturesque blue and white village of Sidi Bou Said.",
-    additionalInfo: "Carthage was the center of the ancient Carthaginian civilization and is now a UNESCO World Heritage site.",
+    description: "카르타고의 고대 유적과 그림 같은 파란색과 흰색 마을 시디 부 사이드를 발견하세요.",
+    additionalInfo: "카르타고는 고대 카르타고 문명의 중심지였으며 현재 유네스코 세계문화유산으로 지정되어 있습니다.",
     image: "/uploads/67603b3f-7233-4442-a28f-cb07d0b628bc.png",
     color: "amber"
   },
   {
     day: 3,
-    title: "Medina of Tunis",
+    title: "튀니스 메디나",
     activities: [
-      "Explore the Medina of Tunis",
-      "Visit Ez-Zitouna Mosque",
-      "Traditional souks tour",
-      "Bardo Museum visit",
-      "Traditional hammam experience"
+      "튀니스 메디나 탐험",
+      "자이투나 모스크 방문",
+      "전통 수크(시장) 투어",
+      "바르도 박물관 방문",
+      "전통 하맘(목욕) 체험"
     ],
-    description: "Walk through the winding streets of the medina, exploring its rich history and vibrant market life.",
-    additionalInfo: "The Medina of Tunis is a UNESCO World Heritage site featuring over 700 monuments.",
+    description: "메디나의 구불구불한 거리를 걸으며 풍부한 역사와 활기찬 시장 생활을 탐험하세요.",
+    additionalInfo: "튀니스 메디나는 700개 이상의 기념물이 있는 유네스코 세계문화유산입니다.",
     image: "/uploads/18062777-c533-46bf-9135-48f839209443.png",
     color: "green"
   },
   {
     day: 4,
-    title: "Kairouan & El Jem",
+    title: "카이로안 & 엘 젬",
     activities: [
-      "Great Mosque of Kairouan",
-      "Medina of Kairouan exploration",
-      "Visit to carpet workshops",
-      "El Jem Amphitheatre tour",
-      "El Jem Museum visit"
+      "카이로안 대모스크",
+      "카이로안 메디나 탐험",
+      "카펫 워크숍 방문",
+      "엘 젬 원형극장 투어",
+      "엘 젬 박물관 방문"
     ],
-    description: "Visit the holy city of Kairouan and marvel at the Roman amphitheater of El Jem.",
-    additionalInfo: "Kairouan is famous for its religious monuments while El Jem amphitheater is one of the best-preserved Roman ruins in the world.",
+    description: "성스러운 도시 카이로안을 방문하고 엘 젬의 로마 원형극장에 감탄하세요.",
+    additionalInfo: "카이로안은 종교적 기념물로 유명하며, 엘 젬 원형극장은 세계에서 가장 잘 보존된 로마 유적 중 하나입니다.",
     image: "/uploads/3caaa473-8150-4b29-88b4-e2e9c696bf1d.png",
     color: "orange"
   },
   {
     day: 5,
-    title: "Sfax & Matmata",
+    title: "스팍스 & 마트마타",
     activities: [
-      "Explore Sfax's well-preserved medina",
-      "Traditional seafood lunch",
-      "Drive to Matmata",
-      "Visit troglodyte dwellings",
-      "Star Wars filming locations tour"
+      "스팍스의 잘 보존된 메디나 탐험",
+      "전통 해산물 점심 식사",
+      "마트마타로 이동",
+      "혈거인 주거지 방문",
+      "스타워즈 촬영지 투어"
     ],
-    description: "Discover Tunisia's second-largest city and the unique underground homes of Matmata.",
-    additionalInfo: "Matmata's cave homes provided filming locations for Star Wars' planet Tatooine.",
+    description: "튀니지의 두 번째로 큰 도시와 마트마타의 독특한 지하 주거지를 발견하세요.",
+    additionalInfo: "마트마타의 동굴 집은 스타워즈의 타투인 행성 촬영지로 사용되었습니다.",
     image: "/uploads/4494507c-a2f0-4f76-883d-3d753283567a.png",
     color: "yellow"
   },
   {
     day: 6,
-    title: "Djerba & Tataouine",
+    title: "제르바 & 타타우인",
     activities: [
-      "Ferry to Djerba Island",
-      "Explore El Ghriba Synagogue",
-      "Djerba Heritage Museum",
-      "Drive to Tataouine",
-      "Berber village exploration"
+      "제르바 섬행 페리 탑승",
+      "엘 그리바 시나고그 탐험",
+      "제르바 민속 박물관",
+      "타타우인으로 이동",
+      "베르베르 마을 탐험"
     ],
-    description: "Experience the cultural diversity of Djerba island and the otherworldly landscapes of Tataouine.",
-    additionalInfo: "Tataouine's desert landscapes inspired the name of Luke Skywalker's home planet in Star Wars.",
+    description: "제르바 섬의 문화적 다양성과 타타우인의 초현실적인 풍경을 경험하세요.",
+    additionalInfo: "타타우인의 사막 풍경은 스타워즈 루크 스카이워커의 고향 행성 이름에 영감을 주었습니다.",
     image: "/uploads/f6049873-1977-41a3-8e74-0815988c84a9.png",
     color: "purple"
   },
   {
     day: 7,
-    title: "Desert Adventure",
+    title: "사막 어드벤처",
     activities: [
-      "Visit Ksar Ouled Debbab fortress",
-      "Desert picnic lunch",
-      "Ksar Ghilane oasis and hot springs",
-      "Camel trek in the sand dunes",
-      "Overnight desert camping"
+      "크사르 올레드 데밥 요새 방문",
+      "사막 피크닉 점심 식사",
+      "크사르 길란 오아시스와 온천",
+      "사구에서 즐기는 낙타 트레킹",
+      "사막 야영 체험"
     ],
-    description: "Journey through the ancient Berber fortresses and relax in the desert oasis of Ksar Ghilane.",
-    additionalInfo: "Ksar Ghilane is a beautiful oasis at the edge of the Grand Erg Oriental, featuring natural hot springs surrounded by sand dunes.",
+    description: "고대 베르베르 요새를 여행하고 크사르 길란의 사막 오아시스에서 휴식을 취하세요.",
+    additionalInfo: "크사르 길란은 그랜드 에르그 오리엔탈 가장자리에 위치한 아름다운 오아시스로, 사구로 둘러싸인 천연 온천이 특징입니다.",
     image: "/uploads/16f46703-2934-4d65-9162-b8824a40c64f.png",
     color: "red"
   },
   {
     day: 8,
-    title: "Douz & Departure",
+    title: "두즈 & 출발",
     activities: [
-      "Morning visit to Douz market",
-      "Desert Museum exploration",
-      "Transfer to Djerba or Tunis airport",
-      "Departure assistance"
+      "두즈 시장 아침 방문",
+      "사막 박물관 탐험",
+      "제르바 또는 튀니스 공항으로 이동",
+      "출발 지원"
     ],
-    description: "Experience the 'Gateway to the Sahara' before heading home with wonderful memories of Tunisia.",
-    additionalInfo: "Douz is famous for its annual International Festival of the Sahara celebrating desert culture.",
+    description: "튀니지의 멋진 추억과 함께 집으로 돌아가기 전에 '사하라의 관문'을 경험하세요.",
+    additionalInfo: "두즈는 사막 문화를 기념하는 연례 사하라 국제 축제로 유명합니다.",
     image: "/uploads/2714f2c3-4465-4a55-8369-5484aa8f3b28.png",
     color: "indigo"
   }
@@ -124,23 +124,23 @@ export const dayByDayItinerary: DayItinerary[] = [
 
 export const faqItems: FAQItem[] = [
   {
-    question: "What kind of transportation is frequently used in Tunisia?",
-    answer: "In Tunisia, transportation is diverse and includes public and private options. Shared minibuses called louages are widely used for intercity travel, while buses and the Metro Léger serve urban commuters, especially in Tunis. The TGM train connects the capital to coastal suburbs, and the SNCFT railway links major cities. Taxis, both regular and shared, are common for shorter trips, while car rentals, motorcycles, and bicycles offer more flexibility."
+    question: "튀니지에서 자주 사용되는 교통수단은 무엇인가요?",
+    answer: "튀니지에서는 교통수단이 다양하며 공공 및 민간 옵션이 포함됩니다. 루아주라고 불리는 공유 미니버스는 도시 간 이동에 널리 사용되며, 버스와 메트로 레제는 특히 튀니스에서 도시 통근자들에게 서비스를 제공합니다. TGM 기차는 수도와 해안 교외를 연결하고, SNCFT 철도는 주요 도시들을 연결합니다. 일반 택시와 합승 택시 모두 짧은 여행에 일반적이며, 렌터카, 오토바이, 자전거는 더 많은 유연성을 제공합니다."
   },
   {
-    question: "What is the best time of year to visit Tunisia?",
-    answer: "The best time to visit Tunisia is during spring (April to June) and fall (September to October) when temperatures are pleasant and crowds are smaller. Summer (July-August) offers perfect beach weather but can be very hot inland. Winter (November-March) is mild along the coast but can be cold in the mountains and desert regions, with occasional rain."
+    question: "튀니지를 방문하기 가장 좋은 시기는 언제인가요?",
+    answer: "튀니지를 방문하기 가장 좋은 시기는 기온이 쾌적하고 인파가 적은 봄(4월~6월)과 가을(9월~10월)입니다. 여름(7월~8월)은 완벽한 해변 날씨를 제공하지만 내륙은 매우 더울 수 있습니다. 겨울(11월~3월)은 해안을 따라 온화하지만 산악 지역과 사막 지역은 추울 수 있으며 가끔 비가 내립니다."
   },
   {
-    question: "Do I need a visa to visit Tunisia?",
-    answer: "Many nationalities including those from the EU, USA, Canada, UK, Japan, and Australia can enter Tunisia without a visa for stays up to 90 days. However, visa requirements change frequently, so it's essential to check the latest requirements with the Tunisian embassy or consulate in your country before traveling."
+    question: "튀니지를 방문하려면 비자가 필요한가요?",
+    answer: "한국, EU, 미국, 캐나다, 영국, 일본, 호주를 포함한 많은 국적의 방문객은 최대 90일 동안 비자 없이 튀니지에 입국할 수 있습니다. 그러나 비자 요건은 자주 변경되므로 여행 전에 해당 국가의 튀니지 대사관 또는 영사관에서 최신 요건을 확인하는 것이 필수적입니다."
   },
   {
-    question: "What currency is used in Tunisia and can I use credit cards?",
-    answer: "The Tunisian Dinar (TND) is the official currency. It's a closed currency, meaning you can only obtain it within Tunisia and should exchange it back before leaving. Credit cards are accepted in major hotels, restaurants, and larger shops in tourist areas, but cash is preferred in smaller establishments and rural areas. ATMs are widely available in cities and tourist zones."
+    question: "튀니지에서 사용되는 통화는 무엇이며 신용카드를 사용할 수 있나요?",
+    answer: "튀니지 디나르(TND)가 공식 통화입니다. 이는 폐쇄 통화이므로 튀니지 내에서만 구할 수 있으며 떠나기 전에 다시 환전해야 합니다. 주요 호텔, 레스토랑, 관광 지역의 대형 상점에서는 신용카드가 허용되지만, 소규모 시설과 시골 지역에서는 현금을 선호합니다. 도시와 관광지에서는 ATM을 쉽게 이용할 수 있습니다."
   },
   {
-    question: "Is Tunisia safe for tourists?",
-    answer: "Tunisia is generally safe for tourists, especially in established tourist areas. Like any destination, normal precautions should be taken regarding personal belongings and avoiding isolated areas at night. The Tunisian government places a high priority on tourist safety with increased security at major attractions and resorts. It's advisable to check your government's travel advisories before visiting."
+    question: "튀니지는 관광객에게 안전인가요?",
+    answer: "튀니지는 일반적으로 관광객에게 안전하며, 특히 정해진 관광 지역에서는 더욱 그렇습니다. 다른 목적지와 마찬가지로 소지품에 유의하고 밤에 외진 곳을 피하는 등 일반적인 예방 조치를 취해야 합니다. 튀니지 정부는 주요 명소와 리조트의 보안을 강화하여 관광객의 안전을 최우선으로 생각합니다. 방문 전에 정부의 여행 권고 사항을 확인하는 것이 좋습니다."
   }
 ];

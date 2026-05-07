@@ -13,6 +13,8 @@ import { aboutTunisiaTranslations } from './about-tunisia';
 import { atlantisDetailedTranslations } from './atlantis-detailed';
 import { tipsBeforeTripTranslations } from './tips-before-trip';
 import { travelMuseumsTranslations } from './travel-museums';
+import { enhancedItineraryTranslations } from './enhanced-itinerary';
+import { slugTranslations } from './slugs';
 
 // Export combined translations
 export const travelTranslations = {
@@ -28,5 +30,7 @@ export const travelTranslations = {
   ...aboutTunisiaTranslations,
   ...atlantisDetailedTranslations,
   ...tipsBeforeTripTranslations,
-  ...travelMuseumsTranslations
+  ...travelMuseumsTranslations,
+  ...enhancedItineraryTranslations,
+  ...slugTranslations
 };

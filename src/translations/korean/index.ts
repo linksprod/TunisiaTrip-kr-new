@@ -21,6 +21,14 @@ import { departureTranslations } from "./departure";
 import { transportationTranslations } from "./transportation";
 import { footerTranslations } from "./footer";
 import { slideshowTranslations } from "./slideshows";
+import { travelCitiesTranslations } from "./travel-cities";
+import { travelGeneralTranslations } from "./travel-general";
+import { travelFaqTranslations } from "./travel-faq";
+import { atlantisDetailedTranslations } from "./atlantis-detailed";
+import { tipsBeforeTripTranslations } from "./tips-before-trip";
+import { accommodationsTranslations } from "./accommodations";
+import { enhancedItineraryTranslations } from "./enhanced-itinerary";
+import { slugTranslations } from "./slugs";
 import { koreanMarketTranslations } from "./korean-market";
 
 export const translations = {
@@ -46,5 +54,13 @@ export const translations = {
   ...transportationTranslations,
   ...footerTranslations,
   ...slideshowTranslations,
+  ...travelCitiesTranslations,
+  ...travelGeneralTranslations,
+  ...travelFaqTranslations,
+  ...atlantisDetailedTranslations,
+  ...tipsBeforeTripTranslations,
+  ...accommodationsTranslations,
+  ...enhancedItineraryTranslations,
+  ...slugTranslations,
   ...koreanMarketTranslations
 };
